@@ -1,22 +1,45 @@
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-
+import login from '../components/Login.vue'
+import Dashboard from '../components/navigations/DashboardNav.vue'
+import Home from '../components/Dashboard.vue'
+ 
 Vue.use(VueRouter)
+// Guard to Check User is authenticated or not
+export const guardMyroute = (to : any, from : any, next : any) =>
+{
+ let isAuthenticated= false;
+  if(localStorage.getItem('LoggedUser') && localStorage.getItem('LoggedUser') == 'true')
+    isAuthenticated = true;
+  else
+    isAuthenticated= false;
+
+  if(isAuthenticated) 
+  {
+    next(); // allow to enter route
+  }else{
+    next('/'); // go to '/login';
+  }
+}
 
 const routes: Array<RouteConfig> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'login',
+    component: login
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: '/dashboard',
+    name: 'Dashboard',
+    component: Dashboard,
+    beforeEnter : guardMyroute,
+    children: [
+      {
+        path: "",
+        name: "Home",
+        component: Home,
+      },
+    ]
   }
 ]
 

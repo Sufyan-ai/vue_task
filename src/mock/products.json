@@ -1,0 +1,31 @@
+[
+    {
+      "id":1,
+      "category": "SVU",
+      "color": "Blue",
+      "maker": "Honda",
+      "registration": "ANB-15",
+      "model": 2014
+    },
+    {
+        "id":2,
+        "category": "Sedan",
+        "color": "Red",
+        "maker": "Honda",
+        "registration": "ANB-15",
+        "model": 2014
+      },
+      {
+        "id":3,
+        "category": "Truck",
+        "color": "Blue",
+        "maker": "Toyota",
+        "registration": "AEE-11",
+        "model": 2014
+      }
+    
+    
+    
+    
+    
+  ]

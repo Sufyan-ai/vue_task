@@ -1,26 +1,58 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es2015",
     "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
     "moduleResolution": "node",
+    "isolatedModules": false,
+    "jsx": "react",
     "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "useDefineForClassFields": true,
-    "sourceMap": true,
-    "baseUrl": ".",
-    "types": [
-      "webpack-env"
+    "emitDecoratorMetadata": true,
+    "declaration": false,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "noLib": false,
+    "strict": true,
+    "preserveConstEnums": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "strictPropertyInitialization": false,
+    "resolveJsonModule": true,
+    // "lib": [ "es2015", "dom", "ESNext" ],
+    "typeRoots": [
+      
+        "./node_modules/@types",
+        "@types"
     ],
-    "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
+
+  //   "target": "esnext",
+  //   "module": "esnext",
+  //   "strict": true,
+  //   "jsx": "preserve",
+  //   "moduleResolution": "node",
+  //   "experimentalDecorators": true,
+  //   "skipLibCheck": true,
+  //   "esModuleInterop": true,
+  //   "noImplicitAny": true,
+  //   "allowSyntheticDefaultImports": true,
+  //   "forceConsistentCasingInFileNames": true,
+  //   "useDefineForClassFields": true,
+  //   "noLib": false,
+  //       "preserveConstEnums": true,
+  //       "suppressImplicitAnyIndexErrors": true,
+  //       "strictPropertyInitialization": false,
+  //   "sourceMap": true,
+  //   "baseUrl": ".",
+  //   "types": [
+  //     "webpack-env"
+  //   ],
+  //   "typeRoots": [
+  //     "./node_modules/@types",
+  //     "@types"
+  // ],
+    // "paths": {
+    //   "@/*": [
+    //     "src/*"
+    //   ]
+    // },
     "lib": [
       "esnext",
       "dom",
@@ -38,4 +70,7 @@
   "exclude": [
     "node_modules"
   ]
+  
+  
 }
+
